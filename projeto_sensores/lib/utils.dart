@@ -1,5 +1,21 @@
 import 'sensores.dart';
 
+//lista global para armazenar as leituras
+List<Map<String, dynamic>> leituras = [];
+
+//adiciona leitura à uma lista global
+void adicionarLeitura() {
+  leituras.add(gerarLeitura());
+}
+
+//separa os dados gerados no sensor.dart
+List<double> getTemperaturas() =>
+    leituras.map((l) => l['temperatura'] as double).toList();
+List<double> getUmidades() =>
+    leituras.map((l) => l['umidade'] as double).toList();
+List<double> getLux() =>
+    leituras.map((l) => (l['lux'] as num).toDouble()).toList();
+
 // calcular média
 double calcularMedia(List<double> valores) {
   if (valores.isEmpty) return 0;
@@ -34,14 +50,23 @@ double calcularMax(List<double> valores) {
   return max;
 }
 
-// testezin
-void main() {
-  List<double> exemplo = [28.5, 29.0, 27.5];
-
-  print("Média: ${calcularMedia(exemplo)}"); // Deve dar 28.33...
-  print("Mínimo: ${calcularMin(exemplo)}"); // Deve dar 27.5
-  print("Máximo: ${calcularMax(exemplo)}"); // Deve dar 29.0
-
-  // Testando leitura do sensor
-  print(gerarLeitura());
+//acumulando as estatísticas
+Map<String, Map<String, double>> obterEstatisticas() {
+  return {
+    'temperatura': {
+      'media': calcularMedia(getTemperaturas()),
+      'min': calcularMin(getTemperaturas()),
+      'max': calcularMax(getTemperaturas()),
+    },
+    'umidade': {
+      'media': calcularMedia(getUmidades()),
+      'min': calcularMin(getUmidades()),
+      'max': calcularMax(getUmidades()),
+    },
+    'lux': {
+      'media': calcularMedia(getLux()),
+      'min': calcularMin(getLux()),
+      'max': calcularMax(getLux()),
+    },
+  };
 }
