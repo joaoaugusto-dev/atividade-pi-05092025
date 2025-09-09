@@ -77,16 +77,16 @@ void main() async {
       print('\nLeitura atual: \x1B[33m${atualLux}\x1B[0m lx');
     } else if (escolha == '4') {
       print(
-        '┌────────────────────────────────────────────────────────────────────┐',
+        '┌───────────────────────────────────────────────────────────────────┐',
       );
       print(
-        '│ \x1B[1m\x1B[36m                      Estatísticas Consolidadas                      \x1B[0m │',
+        '│ \x1B[1m\x1B[36m                      Estatísticas Consolidadas                  \x1B[0m │',
       );
       print(
         '├──────────────┬────────────┬─────────┬─────────┬──────────┬────────┤',
       );
       print(
-        '│ \x1B[1mSensor       \x1B[0m│ \x1B[1mMédia      \x1B[0m│ \x1B[1mMin     \x1B[0m│ \x1B[1mMax     \x1B[0m│ \x1B[1mAtual   \x1B[0m│ \x1B[1mUnid. \x1B[0m│',
+        '│ \x1B[1mSensor       \x1B[0m│ \x1B[1mMédia      \x1B[0m│ \x1B[1mMin     \x1B[0m│ \x1B[1mMax     \x1B[0m│ \x1B[1mAtual   \x1B[0m │ \x1B[1mUnid. \x1B[0m │',
       );
       print(
         '├──────────────┼────────────┼─────────┼─────────┼──────────┼────────┤',
