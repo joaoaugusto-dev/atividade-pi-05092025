@@ -17,17 +17,18 @@ List<double> getLux() =>
     leituras.map((l) => (l['lux'] as num).toDouble()).toList();
 
 // calcular média
-double calcularMedia(List<double> valores) {
+double calcularMedia(List<double> valores, {int casasDecimais = 1}) {
   if (valores.isEmpty) return 0;
   double soma = 0;
   for (var v in valores) {
     soma += v;
   }
-  return soma / valores.length;
+  double media = soma / valores.length;
+  return double.parse(media.toStringAsFixed(casasDecimais));
 }
 
 // calcular mínimo
-double calcularMin(List<double> valores) {
+double calcularMin(List<double> valores, {int casasDecimais = 1}) {
   if (valores.isEmpty) return 0;
   double min = valores.first;
   for (var v in valores) {
@@ -35,11 +36,11 @@ double calcularMin(List<double> valores) {
       min = v;
     }
   }
-  return min;
+  return double.parse(min.toStringAsFixed(casasDecimais));
 }
 
 // calcular máximo
-double calcularMax(List<double> valores) {
+double calcularMax(List<double> valores, {int casasDecimais = 1}) {
   if (valores.isEmpty) return 0;
   double max = valores.first;
   for (var v in valores) {
@@ -47,26 +48,26 @@ double calcularMax(List<double> valores) {
       max = v;
     }
   }
-  return max;
+  return double.parse(max.toStringAsFixed(casasDecimais));
 }
 
 //acumulando as estatísticas
 Map<String, Map<String, double>> obterEstatisticas() {
   return {
     'temperatura': {
-      'media': calcularMedia(getTemperaturas()),
-      'min': calcularMin(getTemperaturas()),
-      'max': calcularMax(getTemperaturas()),
+      'media': calcularMedia(getTemperaturas(), casasDecimais: 1),
+      'min': calcularMin(getTemperaturas(), casasDecimais: 1),
+      'max': calcularMax(getTemperaturas(), casasDecimais: 1),
     },
     'umidade': {
-      'media': calcularMedia(getUmidades()),
-      'min': calcularMin(getUmidades()),
-      'max': calcularMax(getUmidades()),
+      'media': calcularMedia(getUmidades(), casasDecimais: 1),
+      'min': calcularMin(getUmidades(), casasDecimais: 1),
+      'max': calcularMax(getUmidades(), casasDecimais: 1),
     },
     'lux': {
-      'media': calcularMedia(getLux()),
-      'min': calcularMin(getLux()),
-      'max': calcularMax(getLux()),
+      'media': calcularMedia(getLux(), casasDecimais: 1),
+      'min': calcularMin(getLux(), casasDecimais: 1),
+      'max': calcularMax(getLux(), casasDecimais: 1),
     },
   };
 }
