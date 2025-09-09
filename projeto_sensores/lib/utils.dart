@@ -12,7 +12,7 @@ void adicionarLeitura() {
 List<double> getTemperaturas() =>
     leituras.map((l) => l['temperatura'] as double).toList();
 List<double> getUmidades() =>
-    leituras.map((l) => l['umidade'] as double).toList();
+    leituras.map((l) => (l['umidade'] as num).toDouble()).toList();
 List<double> getLux() =>
     leituras.map((l) => (l['lux'] as num).toDouble()).toList();
 
