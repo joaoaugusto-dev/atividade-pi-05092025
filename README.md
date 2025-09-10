@@ -4,7 +4,7 @@
 
 ## 📝 Descrição
 
-Este projeto simula sensores de **temperatura**, **umidade** e **luminosidade (LDR)** em Dart, gerando leituras periódicas e exibindo um **dashboard textual** em tempo real. O sistema calcula **estatísticas do último minuto** e mostra a **leitura atual** atualizada a cada 2 segundos.
+Este projeto simula sensores de **temperatura**, **umidade** e **luminosidade (LDR)** em Dart, gerando leituras periódicas e exibindo um **dashboard textual** em tempo real. O sistema calcula **estatísticas do último minuto** e mostra a **leitura atual** atualizada a cada 1 segundo.
 
 O objetivo é praticar **List, Map e funções em Dart**, além de desenvolver um painel textual simples e funcional.
 
@@ -43,13 +43,13 @@ O objetivo é praticar **List, Map e funções em Dart**, além de desenvolver u
 2. Clone este repositório:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/projeto_sensores.git
+git clone https://github.com/joaoaugusto-dev/atividade-pi-05092025
 ```
 
 3. Navegue até a pasta do projeto:
 
 ```bash
-cd projeto_sensores
+cd projeto_sensores/bin
 ```
 
 4. Execute o programa:
@@ -74,12 +74,17 @@ dart main.dart
 ## 🚀 Exemplo de saída no console
 
 ```
-Leitura Atual: Temp: 28.9°C | Umid: 65% | LDR: 530
+================ DASHBOARD SENSORES ================
+ Leituras acumuladas: 3
+====================================================
+Selecione uma opção:
+ 1. Ver estatísticas de Temperatura
+ 2. Ver estatísticas de Umidade
+ 3. Ver estatísticas de Lux
+ 4. Ver todas as estatísticas
+ 0. Sair
 
---- Estatísticas Último Minuto ---
-Temperatura: min 28.5 | max 29.0 | média 28.7
-Umidade: min 64 | max 66 | média 65
-Luminosidade: min 510 | max 530 | média 520
+Digite o número da opção desejada:
 ```
 
 ---
@@ -88,7 +93,7 @@ Luminosidade: min 510 | max 530 | média 520
 
 * **Kauan Leandrini (sensores.dart)** – Geração de leituras simuladas
 * **Isadora Cabral (utils.dart)** – Funções de cálculo
-* **João Augusto de Freitas (dashboard.dart)** – Exibição do dashboard
+* **João Augusto de Freitas (dashboard.dart)** – Dashboard e estruturação geral
 * **Everson Chagas (main.dart)** – Integração e controle do ciclo de leitura
 
 ---
@@ -97,9 +102,3 @@ Luminosidade: min 510 | max 530 | média 520
 
 * [Dart](https://dart.dev/) – Linguagem principal
 * Conceitos: List, Map, funções, Timer, Console Output
-
----
-
-## 📄 Licença
-
-MIT License – veja o arquivo [LICENSE](LICENSE) para detalhes.
